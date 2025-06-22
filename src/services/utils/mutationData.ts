@@ -11,7 +11,6 @@ export interface InputData {
 }
 
 function mutationData(data: InputData) {
-
     const getDateFromDay = (dayOfYear: number): Date => {
         const date = new Date(2025, 0);
         date.setDate(dayOfYear);
@@ -22,8 +21,18 @@ function mutationData(data: InputData) {
         const day = date.getDate();
         const month = date.getMonth();
         const months = [
-            "января", "февраля", "марта", "апреля", "мая", "июня",
-            "июля", "августа", "сентября", "октября", "ноября", "декабря"
+            'января',
+            'февраля',
+            'марта',
+            'апреля',
+            'мая',
+            'июня',
+            'июля',
+            'августа',
+            'сентября',
+            'октября',
+            'ноября',
+            'декабря',
         ];
         return `${day} ${months[month]}`;
     };
@@ -40,7 +49,6 @@ function mutationData(data: InputData) {
         average_spend_galactic: Math.round(data.average_spend_galactic),
         big_spent_civ: data.big_spent_civ,
         less_spent_civ: data.less_spent_civ,
-    }
-
+    };
 }
 export default mutationData;

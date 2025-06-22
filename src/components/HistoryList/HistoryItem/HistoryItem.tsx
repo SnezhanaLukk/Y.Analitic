@@ -2,19 +2,19 @@ import { useState } from 'react';
 import type { MouseEvent } from 'react';
 import Modal from '../../Modal/Modal';
 import styles from './historyItem.module.css';
-import file from '../../../image/akar-icons_file.svg'
+import file from '../../../image/akar-icons_file.svg';
 import smile from '../../../image/Smile.svg';
-import smileLight from "../../../image/SmileLigth.svg"
+import smileLight from '../../../image/SmileLigth.svg';
 import sadness from '../../../image/Vector.svg';
-import sadLihgt from '../../../image/SagLight.svg'
-import trash from '../../../image/Trash.svg'
+import sadLihgt from '../../../image/SagLight.svg';
+import trash from '../../../image/Trash.svg';
 import type { HistoryDataType } from '../../../types/HistoryTypes';
 
 interface HistoryItemProps {
     id: string;
-    fileName: string,
-    dateCreation: string,
-    isSuccess: boolean
+    fileName: string;
+    dateCreation: string;
+    isSuccess: boolean;
     onDelete: (id: string) => void;
     data: HistoryDataType | null;
 }
@@ -29,12 +29,12 @@ function HistoryItem({ id, fileName, dateCreation, isSuccess, onDelete, data }: 
     return (
         <>
             <div className={styles.wrapper}>
-                <div className={styles.itemWrapper}
-                    onClick={() => setIsModalOpen(isSuccess)}
-                >
+                <div className={styles.itemWrapper} onClick={() => setIsModalOpen(isSuccess)}>
                     <div className={styles.item}>
-                        <img src={file} alt="File icon" />
-                        <span className={styles.textContainer} title={fileName}>{fileName}</span>
+                        <img src={file} alt='File icon' />
+                        <span className={styles.textContainer} title={fileName}>
+                            {fileName}
+                        </span>
                     </div>
 
                     <div className={styles.item}>
@@ -43,22 +43,30 @@ function HistoryItem({ id, fileName, dateCreation, isSuccess, onDelete, data }: 
 
                     <div className={isSuccess ? styles.item : styles.failItem}>
                         <span className={styles.textContainer}>Обработан успешно</span>
-                        {isSuccess ? <img src={smile} alt="Success" /> : <img src={smileLight} alt="Not success" />}
+                        {isSuccess ? (
+                            <img src={smile} alt='Success' />
+                        ) : (
+                            <img src={smileLight} alt='Not success' />
+                        )}
                     </div>
 
                     <div className={!isSuccess ? styles.item : styles.failItem}>
                         <span className={styles.textContainer}>Не удалось обработать</span>
-                        {isSuccess ? <img src={sadLihgt} alt="Failure" /> : <img src={sadness} alt="Not failure" />}
+                        {isSuccess ? (
+                            <img src={sadLihgt} alt='Failure' />
+                        ) : (
+                            <img src={sadness} alt='Not failure' />
+                        )}
                     </div>
                 </div>
 
                 <div className={styles.trash} onClick={handleDelete}>
-                    <img src={trash} alt="Delete" />
+                    <img src={trash} alt='Delete' />
                 </div>
             </div>
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} data={data} />
         </>
-    )
+    );
 }
 
 export default HistoryItem;

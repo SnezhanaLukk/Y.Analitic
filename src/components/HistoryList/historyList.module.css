@@ -17,8 +17,8 @@
 }
 
 .buttonMore {
-    background-color: #2AE881;
-    color: #201B10;
+    background-color: var(--success-green);
+    color: var(--text-dark);
     font-size: 35px;
     font-weight: 400;
     padding: 20px;
@@ -29,11 +29,11 @@
 }
 
 .buttonClear {
-    background-color: #201B10;
+    background-color: var(--text-dark);
     font-size: 35px;
     font-weight: 400;
     padding: 20px;
-    color: #FFFFFF;
+    color: var(--text-light);
     min-height: 70px;
     border-radius: 20px;
     border: none;

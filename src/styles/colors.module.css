@@ -1,18 +1,24 @@
 :root {
     /* Основные цвета */
-    --primary-light: #EACDFF;
-    --success-light: #D4FAE6;
-    --accent-purple: #CB81FF;
-    --accent-orange: #FF5F00;
-    --success-green: #2AE881;
+    --primary-light: #eacdff;
+    --success-light: #d4fae6;
+    --accent-purple: #cb81ff;
+    --accent-orange: #ff5f00;
+    --success-green: #2ae881;
+    --button-dark: #1a0e00;
+    --white-button: #ffffff;
 
     /* Текстовые цвета */
-    --text-dark: #201B10;
-    --text-light: #FFFFFFFFF;
+    --text-dark: #201b10;
+    --text-light: #ffffff;
     --text-inverted: #1a0e00;
+    --text-error: #ff5f00;
+    --text-pink: #cb81ff;
+    --text-spy: #8f64ae;
 
     /* Состояния */
-    --state-empty: #FFFFFFFFF;
+    --state-empty: #ffffff;
+    --state-loading: #2ae881;
     --state-uploading: var(--accent-purple);
     --state-error: var(--accent-orange);
 }

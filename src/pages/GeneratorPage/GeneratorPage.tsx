@@ -1,11 +1,11 @@
-import Generator from "../../components/Generator/Generator"
+import Generator from '../../components/Generator/Generator';
 
 function GeneratorPage() {
     return (
         <>
             <Generator />
         </>
-    )
+    );
 }
 
-export default GeneratorPage
+export default GeneratorPage;

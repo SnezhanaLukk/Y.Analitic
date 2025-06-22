@@ -1,8 +1,7 @@
 @import '../../styles/colors.module.css';
 
 .wrapper {
-
-    background-color: #EACDFF;
+    background-color: var(--primary-light);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +14,7 @@
 }
 
 .dragOver {
-    background-color: #D4FAE6;
+    background-color: var(--success-light);
 }
 
 .buttonsContainer {
@@ -44,50 +43,50 @@
 }
 
 .empty {
-    background: #fff;
-    color: #201B10;
+    background: var(--state-empty);
+    color: var(--text-dark);
 }
 
 .uploading {
-    background: #CB81FF;
+    background: var(--state-uploading);
 }
 
 .uploaded {
-    background: #CB81FF;
-    color: #201B10;
+    background: var(--accent-purple);
+    color: var(--text-dark);
 }
 
 .done {
-    background: #D4FAE6;
-    color: #201B10;
+    background: var(--success-light);
+    color: var(--text-dark);
 }
 
 .error {
-    background: #FF5F00;
-    color: #fff;
+    background: var(--state-error);
+    color: var(--text-light);
 }
 
 .text {
     font-size: 35px;
-    color: #201B10;
+    color: var(--text-dark);
     margin: 10px 0;
 }
 
 .info {
     font-size: 35px;
     margin: 10px 0;
-    color: #201B10
+    color: var(--text-dark);
 }
 
 .errorMessage {
     font-size: 35px;
     margin: 10px 0;
-    color: #FF5F00;
+    color: var(--state-error);
 }
 
 .close {
-    background: #1a0e00;
-    color: #fff;
+    background: var(--text-inverted);
+    color: var(--text-light);
     border: none;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
@@ -106,8 +105,8 @@
 .loader {
     width: 50px;
     height: 50px;
-    border: 4px solid #fff;
-    border-top: 4px solid #2AE881;
+    border: 4px solid var(--text-light);
+    border-top: 4px solid var(--success-green);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }

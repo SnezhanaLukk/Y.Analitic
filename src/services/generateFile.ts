@@ -1,9 +1,9 @@
 async function generateFile() {
     const url = 'http://localhost:3000/report?';
     const params = new URLSearchParams({
-        size: '0.1',
+        size: '1',
         withErrors: 'on',
-        maxSpend: '1000'
+        maxSpend: '1000',
     });
     try {
         const response = await fetch(`${url}${params.toString()}`);
@@ -15,13 +15,13 @@ async function generateFile() {
         const urlForDownload = URL.createObjectURL(data);
         const link = document.createElement('a');
         link.href = urlForDownload;
-        link.download = 'file_uploaded_1.csv';
+        link.download = 'file_waste.csv';
         link.click();
 
         URL.revokeObjectURL(urlForDownload);
         link.remove();
 
-        return 'done'
+        return 'done';
     } catch {
         return 'error';
     }

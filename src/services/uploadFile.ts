@@ -1,6 +1,6 @@
-import useStore from "../store/slice";
-import mutationData from "./utils/mutationData";
-import saveToLocalStorage from "./utils/saveToLocalStorage";
+import useStore from '../store/slice';
+import mutationData from './utils/mutationData';
+import saveToLocalStorage from './utils/saveToLocalStorage';
 
 const url = 'http://localhost:3000/aggregate?';
 const params = new URLSearchParams({ rows: '100000' });
@@ -18,7 +18,7 @@ async function uploadFile(file: File): Promise<ProcessingResult> {
     try {
         const response = await fetch(`${url}${params.toString()}`, {
             method: 'POST',
-            body: formData
+            body: formData,
         });
         if (response.ok && response.body) {
             const reader = response.body.getReader();
@@ -44,7 +44,7 @@ async function uploadFile(file: File): Promise<ProcessingResult> {
                 return await read();
             };
 
-            const result = read();
+            const result = await read();
 
             return result;
         } else {
@@ -52,15 +52,13 @@ async function uploadFile(file: File): Promise<ProcessingResult> {
             saveToLocalStorage(null, false, file.name);
             return {
                 success: false,
-                error: `Server error: ${response.status} - ${errorText}`
+                error: `Server error: ${response.status} - ${errorText}`,
             };
         }
-    }
-    catch (error) {
+    } catch (error) {
         saveToLocalStorage(null, false, file.name);
         throw new Error(`Ошибка при отправке запроса: ${error}`);
     }
 }
 
 export default uploadFile;
-

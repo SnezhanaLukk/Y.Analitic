@@ -19,8 +19,8 @@
 .logoText {
     font-size: 30px;
     font-weight: 500;
-    color: #201B10;
-    background-color: #CB81FF;
+    color: var(--text-dark);
+    background-color: var(--accent-purple);
     margin: 0;
     padding: 3px 6px;
     text-transform: uppercase;
@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    color: #201B10;
+    color: var(--text-dark);
     text-decoration: none;
     font-size: 25px;
     font-weight: 400;
@@ -43,7 +43,6 @@
     position: relative;
     transition: all 0.3s easy;
 }
-
 
 .navLink.activeLink {
     position: relative;
@@ -57,5 +56,5 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #201B10;
+    background-color: var(--text-dark);
 }

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: black;
+    /* color: black; */
     font-family: 'Roboto', sans-serif;
     margin-top: 80px;
 }
@@ -21,19 +21,18 @@
     font-family: 'Roboto', sans-serif;
     height: 80px;
     width: 361px;
-    background: #2AE881;
+    background: var(--success-green);
     font-size: 35px;
     font-weight: 400;
     border-radius: 15px;
     border-style: none;
 }
 
-
 .loader {
     width: 50px;
     height: 50px;
-    border: 4px solid #FFFFFF;
-    border-top: 4px solid #2AE881;
+    border: 4px solid var(--state-empty);
+    border-top: 4px solid var(--state-loading);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -48,44 +47,42 @@
     }
 }
 
-
 .loading {
-    background: #CB81FF;
+    background: var(--state-uploading);
 }
-
 
 .done {
     width: 200px;
-    background: #D4FAE6;
-    color: #201B10;
+    background: var(--success-light);
+    color: var(--text-dark);
 }
 
 .error {
     width: 200px;
-    background: #FF5F00;
-    color: #FFFFFF;
+    background: var(--accent-orange);
+    color: var(--text-light);
 }
 
 .info {
     font-size: 35px;
     margin: 10px 0;
-    color: #201B10
+    color: var(--text-dark);
 }
 
 .errorMessage {
     font-size: 35px;
     margin-top: 10px;
-    color: #FF5F00;
+    color: var(--text-error);
 }
 
 .buttonWrapper {
     display: flex;
-    gap: 10px
+    gap: 10px;
 }
 
 .close {
-    background: #1a0e00;
-    color: #FFFFFF;
+    background: var(--button-dark);
+    color: var(--text-light);
     border: none;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;

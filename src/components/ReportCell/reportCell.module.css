@@ -4,7 +4,7 @@
     display: flex;
     height: 117.5px;
     /* width: 901px; */
-    background-color: #FFFFFF;
+    background-color: var(--white-button);
     border-radius: 10px;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@
 .pinkVariant {
     display: flex;
     height: 117.5px;
-    background-color: #EACDFF;
+    background-color: var(--primary-light);
     border-radius: 10px;
     flex-direction: column;
     align-items: center;

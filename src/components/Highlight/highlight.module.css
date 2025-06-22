@@ -12,7 +12,7 @@
 .text {
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
-    color: #CB81FF;
+    color: var(--text-pink);
     font-weight: 350;
 }
 

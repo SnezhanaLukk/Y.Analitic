@@ -13,14 +13,13 @@
 }
 
 .itemWrapper {
-    background-color: #CB81FF;
+    background-color: var(--accent-purple);
     display: grid;
-    grid-template-columns: minmax(0, 1.5fr) 1fr 1.5fr 1.5fr;
+    grid-template-columns: minmax(0, 1.5fr) 1fr minmax(0, 1.5fr) minmax(0, 1.5fr);
     border-radius: 45px;
     padding: 0 20px;
     min-height: 87px;
     width: 100%;
-    /* justify-content: space-between; */
     align-items: center;
     flex-wrap: wrap;
 }
@@ -30,7 +29,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     min-width: 0;
-
 }
 
 .item {
@@ -38,7 +36,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #201B10;
+    color: var(--text-dark);
 }
 
 .failItem {
@@ -46,7 +44,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #8F64AE;
+    color: var(--text-spy);
 }
 
 img {
@@ -58,16 +56,12 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFFFFF;
+    background-color: var(--white-button);
     border-radius: 15px;
     min-width: 87px;
     height: 87px;
     flex-shrink: 0;
 }
-
-/* .nonActive {
-    color: #8F64AE;
-} */
 
 .trash img {
     max-width: 50px;

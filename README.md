@@ -146,8 +146,10 @@ src/
 │   │   ├── saveToLocalStorage.ts		# Работа с LocalStorage
 │   ├── generateFile.ts				# Генерация тестовых данных
 │   └── uploadFile.ts				# Логика загрузки файлов
-├── store/
-│   └── slice.ts				# Стейт менедер Zustand
+├── store/            # Стейт менедер Zustand
+│   └── slice.ts				
+├── styles/           # Общие цвета
+│   └── colors.module.css
 ├── types/
 │   └── HistoryTypes.tsx		# Типы TypeScript для работы с историей
 │

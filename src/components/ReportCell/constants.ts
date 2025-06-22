@@ -6,5 +6,5 @@ export const CELL_REPORT_TEXT = {
     less_spent_civ: 'цивилизация с минимальными расходами',
     big_spent_at: 'день года с максимальными расходами',
     big_spent_value: 'максимальная сумма расходов за день',
-    average_spend_galactic: 'средние расходы в галактических кредитах'
+    average_spend_galactic: 'средние расходы в галактических кредитах',
 };

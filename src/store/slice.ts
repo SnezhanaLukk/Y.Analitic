@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 
 export type AggregatedData = {
     total_spend_galactic: number;
@@ -10,17 +10,17 @@ export type AggregatedData = {
     average_spend_galactic: number;
     big_spent_civ: string;
     less_spent_civ: string;
-}
+};
 
 type Store = {
     receivedData: AggregatedData | null;
     setReceivedData: (receivedData: AggregatedData) => void;
     resetData: () => void;
-}
+};
 const useStore = create<Store>((set) => ({
     receivedData: null,
     setReceivedData: (receivedData: AggregatedData) => set(() => ({ receivedData })),
-    resetData: () => set(() => ({ receivedData: null }))
-}))
+    resetData: () => set(() => ({ receivedData: null })),
+}));
 
 export default useStore;

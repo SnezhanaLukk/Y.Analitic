@@ -1,9 +1,8 @@
-import { NavLink } from "react-router-dom";
-import HistoryItem from "./HistoryItem/HistoryItem"
-import styles from "./historyList.module.css"
-import type { HistoryItemType } from "../../types/HistoryTypes"
-import { useState, useCallback, useEffect } from "react";
-
+import { NavLink } from 'react-router-dom';
+import HistoryItem from './HistoryItem/HistoryItem';
+import styles from './historyList.module.css';
+import type { HistoryItemType } from '../../types/HistoryTypes';
+import { useState, useCallback, useEffect } from 'react';
 
 function HistoryList() {
     const [historyList, setHistoryList] = useState<HistoryItemType[]>([]);
@@ -15,14 +14,13 @@ function HistoryList() {
                 const parsedData = JSON.parse(storedData);
                 setHistoryList(parsedData);
             } catch (error) {
-                console.error("Ошибка при парсинге данных из localStorage:", error);
+                throw Error(`Ошибка при парсинге данных из localStorage: ${error}`);
             }
         }
     }, []);
 
-
     const deleteHistoryItem = (id: string) => {
-        const newItems = historyList.filter(item => item.id !== id);
+        const newItems = historyList.filter((item) => item.id !== id);
         setHistoryList(newItems);
         if (newItems.length > 0) {
             localStorage.setItem('history', JSON.stringify(newItems));
@@ -30,37 +28,41 @@ function HistoryList() {
             localStorage.removeItem('history');
         }
     };
+
     const handleClearAll = useCallback(() => {
         setHistoryList([]);
         localStorage.removeItem('history');
     }, []);
 
-
     return (
         <div className={styles.wrapper}>
             {historyList.length === 0 ? (
                 <div className={styles.text}>История пуста</div>
-            ) : historyList.map((item) => (
-                <HistoryItem
-                    id={item.id}
-                    key={item.id}
-                    fileName={item.name}
-                    dateCreation={item.date}
-                    isSuccess={item.isSuccess}
-                    onDelete={deleteHistoryItem}
-                    data={item.data}
-                />
-            ))}
+            ) : (
+                historyList.map((item) => (
+                    <HistoryItem
+                        id={item.id}
+                        key={item.id}
+                        fileName={item.name}
+                        dateCreation={item.date}
+                        isSuccess={item.isSuccess}
+                        onDelete={deleteHistoryItem}
+                        data={item.data}
+                    />
+                ))
+            )}
             <div className={styles.wrapButton}>
-                <NavLink
-                    to="/generate">
-                    <button className={styles.buttonMore} >Сгенерировать больше</button>
+                <NavLink to='/generate'>
+                    <button className={styles.buttonMore}>Сгенерировать больше</button>
                 </NavLink>
 
-                {historyList.length !== 0 && <button className={styles.buttonClear} onClick={handleClearAll}>Очистить всё</button>
-                }
+                {historyList.length !== 0 && (
+                    <button className={styles.buttonClear} onClick={handleClearAll}>
+                        Очистить всё
+                    </button>
+                )}
             </div>
-        </div >
-    )
+        </div>
+    );
 }
-export default HistoryList
+export default HistoryList;

@@ -1,0 +1,8 @@
+# .prettierignore
+dist
+node_modules
+package*.json
+*.log
+*.md
+*.svg
+public

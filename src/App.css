@@ -1,19 +1,18 @@
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #FCE2FF;
+    margin: 0;
+    padding: 0;
+    background-color: #fce2ff;
 }
 
 .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 2rem;
-  color: #8F64AE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+    color: #8f64ae;
 }
 
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }

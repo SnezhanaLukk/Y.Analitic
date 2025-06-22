@@ -16,7 +16,7 @@
 }
 
 .modalContent {
-    background-color: #FFFFFF;
+    background-color: var(--white-button);
     padding: 40px;
     border-radius: 40px;
     position: relative;
@@ -35,8 +35,8 @@
 }
 
 .closeButton {
-    background-color: #201B10;
-    color: #FFFFFF;
+    background-color: var(--text-dark);
+    color: var(--text-light);
     height: 70px;
     width: 70px;
     font-size: 50px;
