@@ -12,9 +12,7 @@ export interface InputData {
 
 function mutationData(data: InputData) {
     const getDateFromDay = (dayOfYear: number): Date => {
-        const date = new Date(2025, 0);
-        date.setDate(dayOfYear);
-        return date;
+        return new Date(2025, 0, 1 + dayOfYear);
     };
 
     const formatDate = (date: Date): string => {
