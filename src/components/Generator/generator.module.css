@@ -1,3 +1,5 @@
+@import '../../styles/colors.module.css';
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -30,7 +32,7 @@
 .loader {
     width: 50px;
     height: 50px;
-    border: 4px solid #fff;
+    border: 4px solid #FFFFFF;
     border-top: 4px solid #2AE881;
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -61,7 +63,7 @@
 .error {
     width: 200px;
     background: #FF5F00;
-    color: #fff;
+    color: #FFFFFF;
 }
 
 .info {
@@ -83,7 +85,7 @@
 
 .close {
     background: #1a0e00;
-    color: #fff;
+    color: #FFFFFF;
     border: none;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;

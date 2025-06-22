@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import styles from "./FileUploader.module.css";
 import { useFileUpload } from "../FileUploadContext/FileUploadContext";
 
-import useStore from "../../api/slice";
+import useStore from "../../store/slice";
 
 interface FileUploaderProps {
     onFileSelected: (file: File) => void;

@@ -1,4 +1,3 @@
-// import React, { useState, useCallback } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './header.module.css'
 import logo from '../../image/Logo SS.svg';
@@ -26,7 +25,6 @@ function Header() {
             <nav className={styles.navLinks}>
                 <NavLink
                     to="/"
-                    exact
                     className={`${styles.navLink} ${isActive('/') ? styles.activeLink : ''}`}
                 >
                     <img src={analitic} alt="СSV Аналитик" />

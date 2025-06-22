@@ -1,3 +1,5 @@
+@import '../../../styles/colors.module.css';
+
 .wrapper {
     display: flex;
     min-height: 92px;
@@ -56,7 +58,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #FFFFFF;
     border-radius: 15px;
     min-width: 87px;
     height: 87px;

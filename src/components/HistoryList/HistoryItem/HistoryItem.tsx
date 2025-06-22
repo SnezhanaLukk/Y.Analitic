@@ -8,7 +8,7 @@ import smileLight from "../../../image/SmileLigth.svg"
 import sadness from '../../../image/Vector.svg';
 import sadLihgt from '../../../image/SagLight.svg'
 import trash from '../../../image/Trash.svg'
-import type { HistoryDataType } from '../../types/HistoryTypes';
+import type { HistoryDataType } from '../../../types/HistoryTypes';
 
 interface HistoryItemProps {
     id: string;
@@ -30,7 +30,7 @@ function HistoryItem({ id, fileName, dateCreation, isSuccess, onDelete, data }: 
         <>
             <div className={styles.wrapper}>
                 <div className={styles.itemWrapper}
-                    onClick={() => isSuccess && setIsModalOpen(true)}
+                    onClick={() => setIsModalOpen(isSuccess)}
                 >
                     <div className={styles.item}>
                         <img src={file} alt="File icon" />
@@ -56,7 +56,7 @@ function HistoryItem({ id, fileName, dateCreation, isSuccess, onDelete, data }: 
                     <img src={trash} alt="Delete" />
                 </div>
             </div>
-            {isModalOpen && isSuccess && data && (<Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} data={data} />)}
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} data={data} />
         </>
     )
 }

@@ -1,8 +1,10 @@
+@import '../../styles/colors.module.css';
+
 .defaultVariant {
     display: flex;
     height: 117.5px;
     /* width: 901px; */
-    background-color: #fff;
+    background-color: #FFFFFF;
     border-radius: 10px;
     flex-direction: column;
     align-items: center;

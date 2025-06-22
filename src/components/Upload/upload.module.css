@@ -1,3 +1,5 @@
+@import '../../styles/colors.module.css';
+
 .container {
     justify-content: center;
     align-items: center;

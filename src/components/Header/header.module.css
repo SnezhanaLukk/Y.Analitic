@@ -1,3 +1,5 @@
+@import '../../styles/colors.module.css';
+
 .header {
     display: flex;
     margin: 40px;
@@ -35,17 +37,13 @@
     gap: 20px;
     color: #201B10;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 400;
     padding: 10px;
     position: relative;
     transition: all 0.3s easy;
 }
 
-/* .activeLink {
-    border-bottom: 2px solid #201B10;
-    padding-bottom: 5px;
-} */
 
 .navLink.activeLink {
     position: relative;

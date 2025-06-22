@@ -1,7 +1,7 @@
 import styles from './upload.module.css'
 import FileUpload from '../FileUploader/FileUploader';
 import { useFileUpload } from '../FileUploadContext/FileUploadContext';
-import uploadFile from '../services/uploadFile';
+import uploadFile from '../../services/uploadFile';
 import { useState } from 'react';
 
 

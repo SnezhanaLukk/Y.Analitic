@@ -1,13 +1,16 @@
 import cn from 'classnames'
 import styles from './reportCell.module.css'
+import { CELL_REPORT_TEXT } from './constants';
+
 interface CellReportProps {
-    text: string;
     value: string | number;
+    textKey: keyof typeof CELL_REPORT_TEXT;
     className?: string;
     variant?: 'default' | 'pink';
 }
-function ReportCell({ text, value, className, variant = 'default' }: CellReportProps) {
-    return (
+
+function ReportCell({ value, className, variant = 'default', textKey }: CellReportProps) {
+    return CELL_REPORT_TEXT[textKey] ? (
         <div className={cn(
             styles.baseStyle,
             {
@@ -17,8 +20,8 @@ function ReportCell({ text, value, className, variant = 'default' }: CellReportP
             className
         )}>
             <div className={styles.result}>{value}</div>
-            <div className={styles.name}>{text}</div>
+            <div className={styles.name}>{CELL_REPORT_TEXT[textKey]}</div>
         </div>
-    )
+    ) : null
 }
 export default ReportCell;

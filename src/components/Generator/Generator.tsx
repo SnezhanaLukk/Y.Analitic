@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import styles from './generator.module.css';
 type LoadingStatus = "empty" | "loading" | "done" | "error";
-import generateFile from '../services/generateFile';
+import generateFile from '../../services/generateFile';
+
 function Generator() {
     const [status, setStatus] = useState<LoadingStatus>("empty");
-
-
 
     const renderButtonContent = () => {
         switch (status) {
@@ -19,6 +18,12 @@ function Generator() {
                 return "Ошибка";
         }
     };
+
+    const handleGenerateFile = async () => {
+        setStatus('loading');
+        await generateFile().then((res) => setStatus(res));
+    }
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.text}>
@@ -26,7 +31,7 @@ function Generator() {
             </div>
             <div className={styles.buttonWrapper}>
                 <button className={`${styles.button} ${styles[status]}`}
-                    onClick={() => generateFile(setStatus)}
+                    onClick={handleGenerateFile}
                     disabled={status === 'loading'}
                 >{renderButtonContent()}</button>
                 {(status !== "empty" && status !== "loading") && (

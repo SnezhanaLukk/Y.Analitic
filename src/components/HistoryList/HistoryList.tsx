@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import HistoryItem from "./HistoryItem/HistoryItem"
 import styles from "./historyList.module.css"
-import type { HistoryItemType } from "../types/HistoryTypes"
+import type { HistoryItemType } from "../../types/HistoryTypes"
 import { useState, useCallback, useEffect } from "react";
 
 
@@ -16,7 +16,6 @@ function HistoryList() {
                 setHistoryList(parsedData);
             } catch (error) {
                 console.error("Ошибка при парсинге данных из localStorage:", error);
-                // setHistoryList(storedData);
             }
         }
     }, []);
@@ -58,8 +57,7 @@ function HistoryList() {
                     <button className={styles.buttonMore} >Сгенерировать больше</button>
                 </NavLink>
 
-                {historyList.length === 0 ?
-                    null : <button className={styles.buttonClear} onClick={handleClearAll}>Отчистить всё</button>
+                {historyList.length !== 0 && <button className={styles.buttonClear} onClick={handleClearAll}>Очистить всё</button>
                 }
             </div>
         </div >

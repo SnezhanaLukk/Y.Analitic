@@ -1,54 +1,158 @@
-# React + TypeScript + Vite
+React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### Краткое описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Интерфейс для анализа данных по галактическим кредитам, позволяющий:
 
-## Expanding the ESLint configuration
+- Загружать и обрабатывать таблицы с показателями галактических кредитов по разным рассам (humans, blobs, monsters)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Генерировать тестовые наборы данных
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Отслеживать историю операций
+
+- Визуализировать результаты аналитики в реальном времени
+
+
+### Технологический стек:  
+
+- State Management: Zustand (используется в компонентах и сервисных утилитах)
+
+- Роутинг: react-router-dom (настроен в App.tsx)
+
+- Стили: CSS Modules (все компоненты имеют собственные стили)
+
+- API: Fetch (реализация в services/uploadFile.ts services/generateFile.ts)
+
+- Локальное хранилище: LocalStorage (утилиты в services/utils/)
+
+- Модальные окна: React Portals (реализация в components/Modal/)
+
+
+### Запуск проекта
+1. **Установите зависимости:**
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. **Запустите dev-сервер:**
+```bash
+npm run dev
 ```
+
+3. **Соберите production-версию:**
+```bash
+npm run build
+```
+4. **Бэкендная часть расположена в отдельном репозитории:**
+https://github.com/etozhenerk/shri2025-back
+
+``` bash
+git clone https://github.com/etozhenerk/shri2025-back.git
+```
+**Установка зависимостей**
+```bash
+npm install
+```
+**Запуск сервера**
+```bash
+npm start
+```
+Сервер будет доступен по адресу:
+http://localhost:3000
+
+
+
+###  Функционал приложения
+
+  **Главная** 
+  Drag&Drop загрузка, закрузка по кнопке, индикатор процесса, просмотр аналитики, сброс состояния
+
+  **Генератор**
+  Создание тестовых таблиц, автоматическое скачивание, обработка ошибок
+
+  **История**
+  Просмотр операций, удаление записей, модальный окно для просмотра деталей успешных обработок
+
+###  Инструкция по настройке параметров бэкенда
+
+	В проекте используются два ключевых сервисных файла для работы с бэкендом:
+
+1. generateFile.ts (Генерация тестовых данных)
+    ```
+	const params = new URLSearchParams({
+        size: '0.1', 				// Размер отчета (строки)
+        withErrors: 'on',			// Включить ошибки в данные
+        maxSpend: '1000'			// Макс. трата за день
+    });
+	``` 
+2. uploadFile.ts (Загрузка данных)
+
+	```
+		const params = new URLSearchParams({ rows: '100000' });		// Размер порции обработки
+	```
+
+
+
+###  Архитектура
+
+src/
+
+├── components/
+│   ├── FileUploadContext/			# Контекст для управления состоянием загрузки
+│   │   └── FileUploadContext.tsx
+│   ├── FileUploader/			# Компонент загрузки файлов (drag&drop)
+│   │   ├── FileUploader.module.css
+│   │   └── FileUploader.tsx
+│   ├── Generator/			# Кнопка генерации тестовых данных
+│   │   ├── generator.module.css
+│   │   └── Generator.tsx
+│   ├── Header/			# Шапка проекта и навигационное меню
+│   │   ├── header.module.css
+│   │   └── Header.tsx
+│   ├── Highlight/			# Визуализация аналитики
+│   │   ├── highlight.module.css
+│   │   └── Highlight.tsx
+│   ├── HistoryList/			# Список истории операций
+│   │   ├── HistoryItem/			# Элемент истории
+│   │   │   ├── historyItem.module.css
+│   │   │   └── HistoryItem.tsx
+│   │   ├── historyList.module.css
+│   │   └── HistoryList.tsx
+│   ├── Modal/			# Модальное окно
+│   │   ├── modal.module.css
+│   │   └── Modal.tsx
+│   ├── ReportCell/				# Компонент отчёта (визуализация аналитики)
+│   │   ├── reportCell.module.css
+│   │   └── ReportCell.tsx
+│   └── Upload/				# Кнопка по отправке данных на аналитику
+│		    ├── upload.module.css
+│   	  └── Upload.tsx
+├── image/           # Папка с изображениями
+├── pages/
+│   ├── GeneratorPage/			# Страница генерации тестовых данных
+│   │   └── GeneratorPage.tsx
+│   ├── History/			# Страница истории операций
+│   │   └── History.tsx
+│   ├──MainPage/			# Главная страница (загрузка данных)
+│   │   └── MainPage.tsx
+│   └── Page404/			# Страница ошибки (Страница не найдена)
+│		    ├── Page404.module.css
+│   	  └── Page404.tsx
+├── services/
+│   ├── utils/
+│   │   ├── historyDataMutation.ts		# Трансформация данных истории
+│   │   ├── mutationData.ts				# Обработка аналитических данных
+│   │   ├── saveToLocalStorage.ts		# Работа с LocalStorage
+│   ├── generateFile.ts				# Генерация тестовых данных
+│   └── uploadFile.ts				# Логика загрузки файлов
+├── store/
+│   └── slice.ts				# Стейт менедер Zustand
+├── types/
+│   └── HistoryTypes.tsx		# Типы TypeScript для работы с историей
+│
+├── App.css
+├── App.tsx
+├── index.css
+├── main.tsx
+└── vite-env.d.ts

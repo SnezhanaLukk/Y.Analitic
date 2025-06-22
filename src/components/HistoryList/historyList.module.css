@@ -1,3 +1,5 @@
+@import '../../styles/colors.module.css';
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -31,7 +33,7 @@
     font-size: 35px;
     font-weight: 400;
     padding: 20px;
-    color: #fff;
+    color: #FFFFFF;
     min-height: 70px;
     border-radius: 20px;
     border: none;

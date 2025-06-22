@@ -1,3 +1,5 @@
+@import '../../styles/colors.module.css';
+
 .wrapper {
 
     background-color: #EACDFF;
@@ -79,7 +81,7 @@
 
 .errorMessage {
     font-size: 35px;
-    margin-top: 10px;
+    margin: 10px 0;
     color: #FF5F00;
 }
 
