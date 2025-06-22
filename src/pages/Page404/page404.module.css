@@ -1,0 +1,16 @@
+@import '../../styles/colors.module.css';
+
+.wrapper {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 200px;
+}
+
+.errorText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #CB81FF;
+}

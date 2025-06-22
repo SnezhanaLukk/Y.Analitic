@@ -1,0 +1,18 @@
+:root {
+    /* Основные цвета */
+    --primary-light: #EACDFF;
+    --success-light: #D4FAE6;
+    --accent-purple: #CB81FF;
+    --accent-orange: #FF5F00;
+    --success-green: #2AE881;
+
+    /* Текстовые цвета */
+    --text-dark: #201B10;
+    --text-light: #FFFFFFFFF;
+    --text-inverted: #1a0e00;
+
+    /* Состояния */
+    --state-empty: #FFFFFFFFF;
+    --state-uploading: var(--accent-purple);
+    --state-error: var(--accent-orange);
+}
