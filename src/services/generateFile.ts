@@ -1,7 +1,7 @@
 async function generateFile() {
     const url = 'http://localhost:3000/report?';
     const params = new URLSearchParams({
-        size: '1',
+        size: '0.1',
         withErrors: 'on',
         maxSpend: '1000',
     });

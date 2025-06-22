@@ -2,11 +2,9 @@ import useStore from '../../store/slice';
 import ReportCell from '../ReportCell/ReportCell';
 import { CELL_REPORT_TEXT } from '../ReportCell/constants';
 import styles from './highlight.module.css';
-import useFileUpload from '../FileUploadContext/hooks/useFileUpload';
 
 function Highlight() {
-    const { status } = useFileUpload();
-    const { receivedData } = useStore();
+    const { receivedData, status } = useStore();
 
     if (!receivedData || (status !== 'done' && status !== 'uploading')) {
         return (

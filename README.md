@@ -99,11 +99,6 @@ http://localhost:3000
 src/
 
 ├── components/
-│   ├── FileUploadContext/			# Контекст для управления состоянием загрузки
-│   │   ├── hooks/ 
-│   │   │   └── useFileUpload.ts 
-│   │   ├── FileUploadContext.ts
-│   │   └── FileUploadContext.tsx
 │   ├── FileUploader/			# Компонент загрузки файлов (drag&drop)
 │   │   ├── FileUploader.module.css
 │   │   └── FileUploader.tsx

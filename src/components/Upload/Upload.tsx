@@ -1,18 +1,12 @@
 import styles from './upload.module.css';
 import FileUpload from '../FileUploader/FileUploader';
-import useFileUpload from '../FileUploadContext/hooks/useFileUpload';
 import uploadFile from '../../services/uploadFile';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useStore from '../../store/slice';
 
 function Upload() {
-    const { status, setStatus } = useFileUpload();
-    const { resetData } = useStore();
+    const { setStatus, status } = useStore();
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
-
-    useEffect(() => {
-        resetData();
-    }, [resetData, selectedFile]);
 
     const handleFileSelected = (file: File) => {
         setSelectedFile(file);
