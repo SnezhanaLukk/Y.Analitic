@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 80px 40px 40px 40px;
+}
+
+.buttonTrash {
+    min-height: 70px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+}
+
+.buttonMore {
+    background-color: #2AE881;
+    color: #201B10;
+    font-size: 35px;
+    font-weight: 400;
+    padding: 20px;
+    min-height: 70px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+}
+
+.buttonClear {
+    background-color: #201B10;
+    font-size: 35px;
+    font-weight: 400;
+    padding: 20px;
+    color: #fff;
+    min-height: 70px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+}
+
+.nonActive {
+    display: none;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}

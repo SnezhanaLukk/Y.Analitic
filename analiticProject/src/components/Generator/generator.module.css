@@ -1,0 +1,100 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 80px;
+}
+
+.text {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    height: 80px;
+    width: 361px;
+    background: #2AE881;
+    font-size: 35px;
+    font-weight: 400;
+    border-radius: 15px;
+    border-style: none;
+}
+
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #fff;
+    border-top: 4px solid #2AE881;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.loading {
+    background: #CB81FF;
+}
+
+
+.done {
+    width: 200px;
+    background: #D4FAE6;
+    color: #201B10;
+}
+
+.error {
+    width: 200px;
+    background: #FF5F00;
+    color: #fff;
+}
+
+.info {
+    font-size: 35px;
+    margin: 10px 0;
+    color: #201B10
+}
+
+.errorMessage {
+    font-size: 35px;
+    margin-top: 10px;
+    color: #FF5F00;
+}
+
+.buttonWrapper {
+    display: flex;
+    gap: 10px
+}
+
+.close {
+    background: #1a0e00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 70px;
+    font-weight: 200;
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+}

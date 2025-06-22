@@ -1,0 +1,33 @@
+.defaultVariant {
+    display: flex;
+    height: 117.5px;
+    /* width: 901px; */
+    background-color: #fff;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+.pinkVariant {
+    display: flex;
+    height: 117.5px;
+    background-color: #EACDFF;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+.result {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
