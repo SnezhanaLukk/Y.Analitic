@@ -1,13 +1,14 @@
 import useStore from '../../api/slice';
 import ReportCell from '../ReportCell/ReportCell';
 import styles from './highlight.module.css';
+import { useFileUpload } from '../FileUploadContext/FileUploadContext';
 
 
 function Highlight() {
-
+    const { status } = useFileUpload();
     const { receivedData } = useStore();
 
-    if (!receivedData) {
+    if (!receivedData || status === 'empty') {
         return (
             <div className={styles.wrapperPlug}>
                 <div className={styles.text}>Здесь</div>

@@ -15,11 +15,12 @@ export type AggregatedData = {
 type Store = {
     receivedData: AggregatedData | null;
     setReceivedData: (receivedData: AggregatedData) => void;
+    resetData: () => void;
 }
-
 const useStore = create<Store>((set) => ({
     receivedData: null,
     setReceivedData: (receivedData: AggregatedData) => set(() => ({ receivedData })),
+    resetData: () => set(() => ({ receivedData: null }))
 }))
 
 export default useStore;

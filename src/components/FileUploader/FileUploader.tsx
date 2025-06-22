@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import styles from "./FileUploader.module.css";
 import { useFileUpload } from "../FileUploadContext/FileUploadContext";
 
+import useStore from "../../api/slice";
+
 interface FileUploaderProps {
     onFileSelected: (file: File) => void;
 }
@@ -11,6 +13,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileSelected }) => {
     const [isDragOver, setIsDragOver] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
+    const { resetData } = useStore();
 
 
     const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
@@ -53,6 +56,9 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileSelected }) => {
     const handleRemove = () => {
         setStatus("empty");
         setFileName(null);
+
+        resetData();
+
         if (inputRef.current) {
             inputRef.current.value = "";
         }
