@@ -34,18 +34,20 @@ function HistoryItem({ id, fileName, dateCreation, isSuccess, onDelete, data }: 
                 >
                     <div className={styles.item}>
                         <img src={file} alt="File icon" />
-                        <span>{fileName}</span>
+                        <span className={styles.textContainer} title={fileName}>{fileName}</span>
                     </div>
 
-                    <div className={styles.item}>{dateCreation}</div>
+                    <div className={styles.item}>
+                        <span className={styles.textContainer}>{dateCreation}</span>
+                    </div>
 
                     <div className={isSuccess ? styles.item : styles.failItem}>
-                        <span>Обработан успешно</span>
+                        <span className={styles.textContainer}>Обработан успешно</span>
                         {isSuccess ? <img src={smile} alt="Success" /> : <img src={smileLight} alt="Not success" />}
                     </div>
 
                     <div className={!isSuccess ? styles.item : styles.failItem}>
-                        <span>Не удалось обработать</span>
+                        <span className={styles.textContainer}>Не удалось обработать</span>
                         {isSuccess ? <img src={sadLihgt} alt="Failure" /> : <img src={sadness} alt="Not failure" />}
                     </div>
                 </div>

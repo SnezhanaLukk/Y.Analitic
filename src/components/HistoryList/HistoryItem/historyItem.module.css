@@ -12,14 +12,23 @@
 
 .itemWrapper {
     background-color: #CB81FF;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) 1fr 1.5fr 1.5fr;
     border-radius: 45px;
     padding: 0 20px;
     min-height: 87px;
     width: 100%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     flex-wrap: wrap;
+}
+
+.textContainer {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+
 }
 
 .item {
