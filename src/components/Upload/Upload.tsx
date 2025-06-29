@@ -28,6 +28,7 @@ function Upload() {
         switch (status) {
             case 'uploaded':
                 return {
+                    type: 'Submit',
                     text: 'Отправить',
                     className: styles.buttonUpload,
                     disabled: false,

@@ -3,7 +3,7 @@ import Highlight from '../../components/Highlight/Highlight';
 
 function MainPage() {
     return (
-        <div>
+        <div data-testid='main-page'>
             <Upload />
             <Highlight />
         </div>

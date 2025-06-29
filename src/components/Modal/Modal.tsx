@@ -14,7 +14,7 @@ function Modal({ isOpen, onClose, data }: ModalProps) {
     if (!isOpen || !data) return null;
 
     return createPortal(
-        <div className={styles.modalOverlay} onClick={onClose}>
+        <div className={styles.modalOverlay} role='dialog' aria-modal='true'>
             <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
                 {Object.entries(data).map(([key, value]) => (
                     <ReportCell

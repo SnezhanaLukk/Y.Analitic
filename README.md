@@ -1,6 +1,3 @@
-React + TypeScript + Vite
-
-
 ### Краткое описание
 
 Интерфейс для анализа данных по галактическим кредитам, позволяющий:
@@ -27,6 +24,22 @@ React + TypeScript + Vite
 - Локальное хранилище: LocalStorage (утилиты в services/utils/)
 
 - Модальные окна: React Portals (реализация в components/Modal/)
+
+- Тестирование: 
+Vitest
+
+  - Юнит-тесты
+  - Интеграционных тесты
+
+Playwright
+
+  - E2E-тестирование браузеров
+
+Testing 
+
+  - @testing-library/react
+  - @testing-library/jest-dom (расширение expect)
+  - @testing-library/user-event (имитация действий)
 
 
 ### Запуск проекта
@@ -61,6 +74,15 @@ npm start
 Сервер будет доступен по адресу:
 http://localhost:3000
 
+5. **Запуск интеграционных и юнит тестов**
+```bash
+npm test
+```
+
+6. **Запуск e2e тестов**
+```bash
+npm run test:e2e
+```
 
 
 ###  Функционал приложения
@@ -150,7 +172,29 @@ src/
 │   └── colors.module.css
 ├── types/
 │   └── HistoryTypes.tsx		# Типы TypeScript для работы с историей
-│
+├── tests/
+│   ├── e2e
+│   │   ├──fixtures/
+│   │   │   └── valid-test.csv		# Файл для проверки правильных расчетов
+│   │   ├── reports/
+│   │   │   └── index.html
+│   │   ├── specs/
+│   │   │   └── upload-analytics.ts # Проверка отправки запроса и получение данных	
+│   │   └── utils/
+│   │       ├── dragAndDropFile.ts  # Имитирует процесс drag-and-drop
+│   │       ├── resultsAccumulation.ts # Проверяет постепенное отображение данных
+│   │       └── uploadFileViaInput.ts # Загрузка файла через элемент input типа `file`
+│   ├── integration/
+│   │   ├── generator.test.tsx # Проверка работы кнопки с генератором
+│   │   ├── historyListStorage.test.tsx # Взаимодействие с localStorage в списке историй
+│   │   └── navigation.test.tsx # Проверка роутинга в приложении
+│   ├── unit/
+│   │   ├── dowloadedFile.test.ts # Проверка скачивания файла при генерации
+│   │   ├── historyDataMutation.test.ts # Проверка функции создания id и обработки даты для корректного сохранения в localStorage
+│   │   ├── historyStorage.test.ts # Проверка на сохранение в localStorage
+│   │   ├── modalWindow.test.tsx # Проверка работы модального окна
+│   │   └── mutationData.test.tsx # Коректное изменеие данных с бекэнда
+│   └──setup.ts
 ├── App.css
 ├── App.tsx
 ├── index.css

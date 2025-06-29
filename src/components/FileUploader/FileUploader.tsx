@@ -72,6 +72,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileSelected }) => {
 
     return (
         <div
+            data-testid='drag-drop-container'
             className={`${styles.wrapper} ${isDragOver ? styles.dragOver : ''}`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -84,7 +85,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileSelected }) => {
                 </label>
 
                 {status !== 'empty' && status !== 'uploading' && (
-                    <div className={styles.close} onClick={handleRemove}>
+                    <div className={styles.close} onClick={handleRemove} data-testid='delete-file'>
                         ×
                     </div>
                 )}
@@ -92,6 +93,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFileSelected }) => {
 
             <input
                 id='fileInput'
+                data-testid='file-input'
                 ref={inputRef}
                 type='file'
                 accept='.csv'

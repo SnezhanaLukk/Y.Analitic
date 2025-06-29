@@ -12,6 +12,7 @@ interface CellReportProps {
 function ReportCell({ value, className, variant = 'default', textKey }: CellReportProps) {
     return CELL_REPORT_TEXT[textKey] ? (
         <div
+            data-testid={`report-cell-${textKey}`}
             className={cn(
                 styles.baseStyle,
                 {

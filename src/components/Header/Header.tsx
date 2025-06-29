@@ -13,7 +13,7 @@ function Header() {
     };
 
     return (
-        <header className={styles.header}>
+        <header className={styles.header} data-testid='app-header'>
             <div className={styles.logoContainer}>
                 <NavLink to='/'>
                     <img src={logo} alt='Летние школы' />

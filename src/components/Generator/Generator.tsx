@@ -16,6 +16,8 @@ function Generator() {
                 return 'Done!';
             case 'error':
                 return 'Ошибка';
+            default:
+                return null;
         }
     };
 
