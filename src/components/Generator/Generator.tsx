@@ -31,6 +31,7 @@ function Generator() {
             <div className={styles.text}>Сгенерируйте готовый csv-файл нажатием одной кнопки</div>
             <div className={styles.buttonWrapper}>
                 <button
+                    data-testid='download-file'
                     className={`${styles.button} ${styles[status]}`}
                     onClick={handleGenerateFile}
                     disabled={status === 'loading'}

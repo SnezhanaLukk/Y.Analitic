@@ -179,7 +179,8 @@ src/
 │   │   ├── reports/
 │   │   │   └── index.html
 │   │   ├── specs/
-│   │   │   └── upload-analytics.ts # Проверка отправки запроса и получение данных	
+│   │   │   ├── downloadGenerateFile.spec.ts # Проверка загрузки сгенерированного файла
+│   │   │   └── upload-analytics.spec.ts # Проверка отправки запроса и получение данных	
 │   │   └── utils/
 │   │       ├── dragAndDropFile.ts  # Имитирует процесс drag-and-drop
 │   │       ├── resultsAccumulation.ts # Проверяет постепенное отображение данных
