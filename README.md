@@ -84,6 +84,11 @@ npm test
 npm run test:e2e
 ```
 
+```bash
+npm run test:e2e:install
+```
+При установке @playwright/test также необходимо прописать команду npx playwright install
+
 
 ###  Функционал приложения
 
