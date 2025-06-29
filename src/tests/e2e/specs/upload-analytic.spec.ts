@@ -75,8 +75,8 @@ test('Отображение прогресса и аналитики после
     const rowsAffectedLocator = page.locator('[data-testid="report-cell-rows_affected"]');
 
     const [total, rows] = await Promise.all([
-        resultsAccumulation(page, totalSpendLocator, 1474935101),
-        resultsAccumulation(page, rowsAffectedLocator, 2946800),
+        resultsAccumulation(page, totalSpendLocator, 5819),
+        resultsAccumulation(page, rowsAffectedLocator, 11),
     ]);
 
     expect(total).toBeTruthy();
@@ -96,13 +96,13 @@ test('Отображение финальных значений отчёта', 
     const cells = reportContainer.locator('[data-testid^="report-cell-"]');
     await expect(cells).toHaveCount(8);
 
-    await expect(page.getByText('1474935101')).toBeVisible();
-    await expect(page.getByText('2946800')).toBeVisible();
+    await expect(page.getByText('5819')).toBeVisible();
+    await expect(page.getByText('11')).toBeVisible();
     await expect(page.getByText('monsters')).toBeVisible();
     await expect(page.getByText('humans')).toBeVisible();
-    await expect(page.getByText('14 ноября')).toBeVisible();
-    await expect(page.getByText('20 декабря')).toBeVisible();
-    await expect(page.getByText('4228625')).toBeVisible();
-    await expect(page.getByText('501')).toBeVisible();
+    await expect(page.getByText('14 сентября')).toBeVisible();
+    await expect(page.getByText('10 октября')).toBeVisible();
+    await expect(page.getByText('1445')).toBeVisible();
+    await expect(page.getByText('529')).toBeVisible();
     await expect(page.locator('text=готово!')).toBeVisible();
 });
