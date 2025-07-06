@@ -62,8 +62,23 @@ test('Полный цикл: загрузка → отправка → удал�
 test('Отображение прогресса и аналитики после обработки файла', async ({ page }) => {
     await page.goto(BASE_URL);
 
-    const filePath = path.join(__dirname, '../fixtures/valid-test.csv');
-    await page.getByTestId('file-input').setInputFiles(filePath);
+    await uploadFileViaInput(
+        page,
+        'valid.csv',
+        `id,civ,developer_id,date,spend
+1,monsters,1626064622973,271,427
+2,humans,6395422139316,140,810
+3,monsters,9599231217927,282,963
+4,blobs,3578428064079,171,106
+5,humans,8348925012584,115,879
+6,humans,5405382384584,12,527
+7,blobs,4489857490237,295,376
+8,blobs,982478726890,119,89
+9,monsters,5809562452672,69,877
+10,blobs,1435036344960,256,20
+11,blobs,4015781838466,325,719`,
+        'text/csv',
+    );
     await page.locator('button:has-text("Отправить")').click();
 
     await expect(page.locator('text=идёт парсинг файла')).toBeVisible();
@@ -83,11 +98,50 @@ test('Отображение прогресса и аналитики после
     expect(rows).toBeTruthy();
 });
 
+// test('Отображение финальных значений отчёта', async ({ page }) => {
+//     await page.goto(BASE_URL);
+
+//     const filePath = path.join(__dirname, '../fixtures/valid-test.csv');
+//     await page.getByTestId('file-input').setInputFiles(filePath);
+//     await page.locator('button:has-text("Отправить")').click();
+
+//     const reportContainer = page.locator('[data-testid="report-container"]');
+//     await reportContainer.waitFor({ state: 'visible', timeout: 15000 });
+
+//     const cells = reportContainer.locator('[data-testid^="report-cell-"]');
+//     await expect(cells).toHaveCount(8);
+
+//     await expect(page.getByText('5819')).toBeVisible();
+//     await expect(page.getByText('11')).toBeVisible();
+//     await expect(page.getByText('monsters')).toBeVisible();
+//     await expect(page.getByText('humans')).toBeVisible();
+//     await expect(page.getByText('14 сентября')).toBeVisible();
+//     await expect(page.getByText('10 октября')).toBeVisible();
+//     await expect(page.getByText('1445')).toBeVisible();
+//     await expect(page.getByText('529')).toBeVisible();
+//     await expect(page.locator('text=готово!')).toBeVisible();
+// });
+
 test('Отображение финальных значений отчёта', async ({ page }) => {
     await page.goto(BASE_URL);
 
-    const filePath = path.join(__dirname, '../fixtures/valid-test.csv');
-    await page.getByTestId('file-input').setInputFiles(filePath);
+    await uploadFileViaInput(
+        page,
+        'valid.csv',
+        `id,civ,developer_id,date,spend
+1,monsters,1626064622973,271,427
+2,humans,6395422139316,140,810
+3,monsters,9599231217927,282,963
+4,blobs,3578428064079,171,106
+5,humans,8348925012584,115,879
+6,humans,5405382384584,12,527
+7,blobs,4489857490237,295,376
+8,blobs,982478726890,119,89
+9,monsters,5809562452672,69,877
+10,blobs,1435036344960,256,20
+11,blobs,4015781838466,325,719`,
+        'text/csv',
+    );
     await page.locator('button:has-text("Отправить")').click();
 
     const reportContainer = page.locator('[data-testid="report-container"]');
